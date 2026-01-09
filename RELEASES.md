@@ -3,3 +3,4 @@
 This index anchors each published release to a dated commit so that the
 GitHub releases page orders them chronologically.
 
+- v2026.0 (2026-01-09)
