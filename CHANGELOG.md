@@ -6,7 +6,7 @@ All notable changes to PostSharp are documented here.
 
 ### Bug Fixes
 - Global named mutexes used for build coordination could cause `UnauthorizedAccessException` on shared build servers when different users run builds, due to missing ACL configuration (#7)
-- PostSharp does not respect private NuGet feed configuration (#5)
+- PostSharp dependency restore ignores NuGet.config (#5)
 
 ### Enhancements
 - Added memory throttling: the PostSharp MSBuild task now waits for sufficient available physical memory before starting compilation, controlled by the `POSTSHARP_REQUIRED_MEMORY` environment variable. This prevents out-of-memory conditions during parallel builds in memory-constrained environments such as Docker containers (#10)
