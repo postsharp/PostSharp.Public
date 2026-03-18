@@ -41,7 +41,7 @@ Use the `eng:prepare-release` skill (`/eng:prepare-release vYYYY.N.BB`). The ski
 - Tags are named `vYYYY.N.BB` (e.g., `v2024.0.22`), not `release/YYYY.N.BB`.
 - Release branches are `release/YYYY.N`. Create from `master` if it doesn't exist.
 - The tag must be created and pushed before creating the GitHub release. The release targets the branch (`--target release/YYYY.N`).
-- When releasing an older version line, use `--latest=false` to avoid overriding the "latest" flag on a newer release. Always check existing releases first.
+- The GitHub "latest" release must always point to the highest version number. When creating a release for a version that is not the highest, use `--latest=false`. Always check existing releases first.
 
 ### CHANGELOG.md
 - Maintained on the release branch. Add new entries at the top (below the header).
