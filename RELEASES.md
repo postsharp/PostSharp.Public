@@ -8,3 +8,4 @@ GitHub releases page orders them chronologically.
 - v2024.0.22 (2026-03-18)
 - v2025.1.14 (2026-03-18)
 - v2026.0.6 (2026-03-19)
+- v2026.0.7 (2026-03-25)
