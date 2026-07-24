@@ -86,10 +86,24 @@ older, accept the wrong ordering: it is cosmetic, whereas a falsified publicatio
 - Commit and push to the release branch before tagging.
 
 ### Release notes content
-- Only include **Fixes** — omit enhancements and internal changes as they are not meaningful to customers.
+
+Always open with the "based on" intro linking the previous release, so the releases form a chain:
+
+```
+PostSharp 2026.0.9 is based on [v2026.0.8](https://github.com/postsharp/PostSharp.Public/releases/tag/v2026.0.8), plus the following changes.
+
+### Fixes
+- [#15](https://github.com/postsharp/PostSharp.Public/issues/15) Description
+
+### Resources
+- [Milestone](https://github.com/postsharp/PostSharp.Public/milestone/5?closed=1)
+```
+
+- When a release forward-ports another version line, name both bases: `is based on [vA] and [vB]`, and summarize the upstream release in a sentence rather than repeating its issues.
+- Sections are `Breaking Changes`, `New`, `Enhancements`, `Fixes`, in that order; include only the non-empty ones. Most releases are `Fixes` only — omit internal changes that are not meaningful to customers.
 - Use full issue links: `[#N](https://github.com/postsharp/PostSharp.Public/issues/N)`.
 - Include a Resources section linking to the milestone.
 
 ### Post-release
-- Close the milestone.
+- Close the milestone, and any stale milestone for the same version on `postsharp/PostSharp`.
 - Comment on each milestone issue with a link to the release, signed `— Claude`.
