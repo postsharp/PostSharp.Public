@@ -39,7 +39,7 @@ Use the `eng:prepare-release` skill (`/eng:prepare-release vYYYY.N.BB`). The ski
 
 ### Tag and branch conventions
 - Tags are named `vYYYY.N.BB` (e.g., `v2024.0.22`), not `release/YYYY.N.BB`.
-- The release title is the tag name, `vYYYY.N.BB`. Do not prefix it with `PostSharp`.
+- The release title is `PostSharp YYYY.N.BB` — the version without the `v` prefix, not the tag name. This matches the convention of the `eng:prepare-release` skill. Every release published before 2026-08-05 was titled after its tag and has since been renamed, so the whole page follows this rule; a title is editable in place with `gh release edit <tag> --title`, which does not disturb the publication date.
 - Release branches are `release/YYYY.N`. Create from `master` if it doesn't exist.
 - The tag must be created and pushed before creating the GitHub release. The release targets the anchor commit (`--target <anchor-sha>`), never a branch — see "Release ordering" below.
 - The GitHub "latest" release must always point to the highest version number. When creating a release for a version that is not the highest, use `--latest=false`. Always check existing releases first.
