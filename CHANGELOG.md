@@ -2,6 +2,22 @@
 
 All notable changes to PostSharp are documented here.
 
+## [2024.0.26] - 2026-09-23
+
+### Security & Privacy
+- Fixed a license verification vulnerability (#108)
+
+### Enhancements
+- Release notes are now published on the GitHub Releases page. `PostSharp-ReleaseNotes-<version>.html` is no longer published with a release, and `ReleaseNotes.htm` is no longer included in the compiler artifacts (#82)
+
+### Bug Fixes
+- Fixed builds that failed or stopped responding when several projects were woven concurrently by the .NET Framework CLR host and the pipe server, including intermittent `PS0264` errors, builds that blocked indefinitely, cancellation that did not stop weaving, connection errors when the pipe server was busy, and an access violation when the compiler process exited after a successful build (#138)
+- Fixed a build failure with `AssertionFailedException` "Encountered unknown implicit runtime framework" while binding platforms on the .NET Framework host (#121)
+- Fixed a build failure with `IndexOutOfRangeException` while writing the Windows PDB of a woven `async` method or iterator (#120)
+- Fixed a build failure with `AssertionFailedException` when the .NET SDK advertises a targeting pack that is not installed (#109)
+- Fixed a build failure with `MSB4062` on a prerelease package when the repository already defines the `PostSharpVersion` property (#111)
+- `PostSharpTrace="*"` now enables all trace categories when `PostSharpUsePipeServer` is `False`, and an invalid trace category no longer crashes the compiler with `TypeInitializationException` (#18)
+
 ## [2024.0.25] - 2026-08-05
 
 ### Enhancements
