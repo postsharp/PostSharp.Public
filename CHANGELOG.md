@@ -2,6 +2,16 @@
 
 All notable changes to PostSharp are documented here.
 
+## [2024.0.27] - 2026-09-26
+
+### Enhancements
+- `LA0014` and `PS0264` are now followed by a `PS0265` message with the binding record of the failing assembly, so a binding failure can be diagnosed without a second build with `PostSharpTrace=AssemblyBinder`. A file exception that is not about an assembly is now reported as `PS0099` instead of `PS0264` (#144)
+
+### Bug Fixes
+- Fixed intermittent `LA0014` and `PS0264` errors, and the silent selection of another build of an assembly, when an assembly file was temporarily inaccessible during weaving (#148, #152)
+- A byte-range lock and a temporarily denied access are now retried, and every read of an assembly file goes through the retry (#149)
+- A failed open of an assembly image is now detected and reported with its original error, and the shared image cache is now thread-safe (#147)
+
 ## [2024.0.26] - 2026-09-23
 
 ### Security & Privacy
