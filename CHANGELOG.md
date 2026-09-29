@@ -15,6 +15,8 @@ First preview of PostSharp 2027.0, based on 2026.0.18.
 - Builds on Windows build agents now use the pipe server, which keeps running after the build. `PostSharpAllowPipeServerWhenUnattended` is obsolete (#145)
 
 ### New
+- Added the `postsharp` command line tool, which registers licence keys and edits settings (#119)
+- Added `postsharp shutdown`, which stops the PostSharp processes that keep running after a build (#124)
 - Licence keys signed with Elliptic Curve DSA are now supported (#170)
 
 ### Bug Fixes
@@ -25,4 +27,4 @@ First preview of PostSharp 2027.0, based on 2026.0.18.
 - Fixed a `NullReferenceException` in `MultiplexerBackend` when a child logging backend creates no transaction (#160)
 
 ### Known Issues
-- The `postsharp` command line tool is not published for this version (#171)
+- The `PostSharp.Tool` package was not uploaded to nuget.org with this release by mistake. It will be published with the next release (#171)
