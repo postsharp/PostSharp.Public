@@ -2,6 +2,24 @@
 
 All notable changes to PostSharp are documented here.
 
+## [2027.0.2-preview] - 2026-10-03
+
+Second preview of PostSharp 2027.0, based on 2027.0.1-preview.
+
+### New
+- Advice parameter binding is now a publicly supported feature, after years of internal use by the Pattern Libraries (#168)
+- Added support for runtime-generated async methods (`<Features>runtime-async=on</Features>` on .NET 11) (#187)
+- A repository can opt out of telemetry by setting `TelemetryEnabled` to `False` in the `postsharp.config` file at its root (#188)
+
+### Enhancements
+- `[SelfPointcut]` and `Master` can be omitted in a declarative aspect when there is only one way to group the advices (#192)
+
+### Fixes
+- Fixed an internal compiler exception, or an advice silently disabled, when an advice method has an invalid parameter binding (#161)
+- Fixed invalid IL, or an internal compiler exception, when an advice with bound parameters does not match its target (#162)
+- The `PostSharp.Tool` package is now published (#171)
+- Warnings about the repository configuration are now reported as PS0284 build warnings (#182)
+
 ## [2027.0.1-preview] - 2026-09-29
 
 First preview of PostSharp 2027.0, based on 2026.0.18.
