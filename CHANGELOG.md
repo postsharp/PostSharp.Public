@@ -19,6 +19,8 @@ Second preview of PostSharp 2027.0, based on 2027.0.1-preview.
 - Fixed invalid IL, or an internal compiler exception, when an advice with bound parameters does not match its target (#162)
 - The `PostSharp.Tool` package is now published (#171)
 - Warnings about the repository configuration are now reported as PS0284 build warnings (#182)
+- Fixed usage telemetry slowing down the parallel build of a large solution (metalama/Metalama#2092)
+- Fixed a crash when Windows refuses to display a toast notification (metalama/Metalama#2047)
 
 ## [2027.0.1-preview] - 2026-09-29
 
