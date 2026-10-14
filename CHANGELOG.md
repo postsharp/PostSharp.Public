@@ -2,6 +2,35 @@
 
 All notable changes to PostSharp are documented here.
 
+## [2027.0.4-preview] - 2026-10-14
+
+Fourth preview of PostSharp 2027.0, based on 2027.0.3-preview and PostSharp 2026.0.19, which brings the fixes of PostSharp 2024.0.28.
+
+### New
+- ReadyToRun, trimming and NativeAOT (#255): the aspect framework (#89), the pattern libraries (#252), and the `InstantiateTypeAdviceInstance` advice (#254)
+
+### Enhancements
+- `PostSharpDependencyRestoreProperties` sets MSBuild properties in the dependency restore projects (#40)
+- The licensing, configuration and telemetry services log to the build-time trace (#158)
+- Unattended builds are licensed for PostSharp Logging in production mode (#190)
+- The `MethodBase` of generic targets is looked up once per generic instance (#242)
+- The `FileLock` trace and the `POSTSHARP_FILE_LOCK_*` environment variables take effect (#266)
+- Documentation of `MethodPointcut`, `MatchPointcut` and the instance lifecycle advices (#239)
+
+### Fixes
+- Runtime async: an exception of `OnYield` or `OnResume` no longer runs the user's `finally` blocks; `PostSharpCompatibilityLevel` 2027.0 routes it through them (#189)
+- New diagnostics LA0135, LA0251, LA0252 and LA0254 for advices that were ignored or crashed the build (#244, #258, #259, #249, #263)
+- Aspects on C# 14 extension properties are applied (#250)
+- Positioned `Require` and `Conflict` messages state the order correctly (#251)
+- `[WaiveAspectEffect]` is honored on aspects that use advice methods (#264)
+- Advice parameter binding fixes (#256, #257, #260)
+- PS0134 on Linux and macOS gives the reason (#265)
+- PS0052 on Linux with capital letters in the package version (#268)
+- SharpCompress 0.49.0 in the unzipper (#270)
+- `VcsCheckEnabled` on Windows no longer waits two minutes and requires a license (#271)
+- Attributes on the backing field of an automatic property are reported (#112), and so is an ignored `appliesToMethodOnly` (#267)
+- A dependent of an `[AggregateAllChanges]` collection is raised once (#247)
+- Closing a logging activity twice is reported as invalid user code (#248)
 ## [2027.0.3-preview] - 2026-10-08
 
 Third preview of PostSharp 2027.0, based on 2027.0.2-preview.
