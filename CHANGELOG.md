@@ -2,6 +2,19 @@
 
 All notable changes to PostSharp are documented here.
 
+## [2024.0.28] - 2026-10-11
+
+### Enhancements
+- When an assembly fails to load because of an earlier request made before the project was loaded, `PS0265` shows the stack trace of the code that made the request (#177)
+- The new `FileLock` trace category records the retries of file operations that fail because the file is locked (#176)
+- The `POSTSHARP_FILE_LOCK_TIMEOUT` and `POSTSHARP_FILE_LOCK_WARNING` environment variables set the timeout and the warning threshold of these retries (#178)
+
+### Bug Fixes
+- With `VcsCheckEnabled`, a project that applies no aspect no longer fails with `PS0242` when its source files are unmodified (#113)
+- Fixed a `RemotingException` of the pipe server when a weave did not communicate with the build for several minutes (#123)
+- An assembly lookup through the host assembly store before build-time logging is initialized no longer makes every later lookup fail (#150)
+- Fixed `Ambiguous assembly binding policies` on .NET Framework when the project redirects an assembly that PostSharp ships to a newer version (#253)
+- The ARM64 native compiler host queries the global assembly cache for the ARM64 variant of an assembly (#245)
 ## [2024.0.27] - 2026-09-26
 
 ### Enhancements
