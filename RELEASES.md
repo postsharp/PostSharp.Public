@@ -28,3 +28,4 @@ GitHub releases page orders them chronologically.
 - v2027.0.1-preview (2026-09-29)
 - v2027.0.2-preview (2026-10-03)
 - v2027.0.3-preview (2026-10-08)
+- v2027.0.4-preview (2026-10-14)
