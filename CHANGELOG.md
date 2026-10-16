@@ -2,7 +2,7 @@
 
 All notable changes to PostSharp are documented here.
 
-## [2027.0.5-preview] - 2026-10-17
+## [2027.0.5-preview] - 2026-10-16
 
 Fifth preview of PostSharp 2027.0, based on 2027.0.4-preview.
 
