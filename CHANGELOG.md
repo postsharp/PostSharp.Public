@@ -2,6 +2,27 @@
 
 All notable changes to PostSharp are documented here.
 
+## [2027.0.5-preview] - 2026-10-17
+
+Fifth preview of PostSharp 2027.0, based on 2027.0.4-preview.
+
+### Breaking Changes
+- ⚠️ EventSource logging backend: custom activity exits have their own event id, 20 (#304)
+- ⚠️ Serilog logging backend: `IndentLevel` is added according to `SerilogSpecialProperties.IndentLevel` (#307)
+- ⚠️ Threading: a thread-affine child is checked with the thread-affine compatibility rules (#308)
+
+### New
+- The `PostSharp.Testing.AspectTesting` package, an aspect test framework (#272)
+- Errors and Warnings reference in the documentation, and corrected texts of 237 messages (#314)
+
+### Fixes
+- Aspect framework: aspects on members of referenced assemblies, `InitializeCurrentAspects`, `[CopyCustomAttributes]`, external deserialization constructors, `[MulticastAttributeUsage]` filters, aspect serializers, failing pointcuts, `Message.Write` (#281-#285, #287, #288, #311, #312)
+- Compiler and messages: concurrent compilations, message locations, configuration errors, fatal messages, message arguments, AR0106 and AR0110, unreachable report sites (#279, #280, #289-#291, #293, #295, #296)
+- Caching: `CachedParameterInfo`, null enumerators, faulted async tasks, profile changes, Redis key prefix, `KeyCompressingThreshold` made obsolete, value adapters (#297-#303)
+- Logging: Microsoft backend loggers, `RootSyntheticId`, formatting string exception, `MultiplexerBackend(null)` (#305, #306, #309, #310)
+- Threading: THR017 (#292); Model: DOM012 for `Depends.On` in helper methods (#294)
+- XAML: XAM051, XAM052, XAM055, XAM077-XAM079, and `Attached<T>.SetValue` (#286, #313)
+
 ## [2027.0.4-preview] - 2026-10-14
 
 Fourth preview of PostSharp 2027.0, based on 2027.0.3-preview and PostSharp 2026.0.19, which brings the fixes of PostSharp 2024.0.28.
