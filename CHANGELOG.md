@@ -2,6 +2,35 @@
 
 All notable changes to PostSharp are documented here.
 
+## [2027.0.6-preview] - 2026-10-22
+
+Sixth preview of PostSharp 2027.0, based on 2027.0.5-preview.
+
+### Highlights
+- Dependency injection in aspects (#318), first used by `[Cache]` and `[InvalidateCache]` (#323)
+- Background compilation server for .NET projects under the .NET SDK, previously available only for .NET Framework (#322)
+
+### Breaking Changes
+- ⚠️ Advice grouping: the `Group` property, `Master` and `[SelfPointcut]` obsolete, and `[SelfPointcut]` advices of different kinds form one group (#324)
+- ⚠️ .NET projects are compiled in a pipe server by default under the .NET SDK (#322)
+- ⚠️ The compiler no longer supplies its third-party dependencies to add-ins (#321)
+- ⚠️ Caching: `[Cache]` and `[InvalidateCache]` are sealed and derive from `MethodLevelAspect`; `CachingServices.DefaultBackend` and `DefaultKeyBuilder` are obsolete (#323)
+
+### New
+- `[ImportMember]` on advice parameters (#316)
+- `IntroduceFieldAdviceInstance` (#317)
+- `ImportDependencyAdviceInstance` and `RunTimeServiceLocator` (#318)
+- Caching: `ICachingService` from dependency injection with `[CacheConfiguration( UseDependencyInjection = true )]` (#323)
+- `ProjectLocal<T>`, build-time state per project (#315)
+- Aspect testing: `.t.cs` snapshots of the woven code with `@CompareTransformedCode` (#326)
+
+### Enhancements
+- More advice parameter bindings in `[OnMethodInvokeAsyncAdvice]` (#325)
+- `MatchPointcut.IsRequired` reports LA0285 when the advice applies to no method (#328)
+
+### Fixes
+- The compiler no longer shares its third-party dependencies with the project being compiled, which fixes PS0264 on version conflicts (#321)
+
 ## [2027.0.5-preview] - 2026-10-16
 
 Fifth preview of PostSharp 2027.0, based on 2027.0.4-preview.
