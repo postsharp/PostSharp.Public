@@ -2,6 +2,18 @@
 
 All notable changes to PostSharp are documented here.
 
+## [2027.0.7-preview] - 2026-10-27
+
+Seventh preview of PostSharp 2027.0, based on 2027.0.6-preview. The packages of 2027.0.6-preview were never published to nuget.org, so this is the first build that ships its changes.
+
+### Highlights
+- `postsharp introspect`: query how aspects were applied to a project or a solution from the command line, in JSON for AI agents (#332)
+
+### New
+- `postsharp introspect show`, `list`, `schema`, `metrics` and `batch` in the `PostSharp.Tool` package (#332)
+- Aspect testing: `.t.pssym` snapshots of the weaving symbol file with `@CompareWeavingSymbols` (#333)
+- SharpCrafters.Backstage: the `SharpCrafters.Aspects.Introspection` and `SharpCrafters.Aspects.Introspection.Query` packages that the commands run on (SharpCrafters.Backstage#38, #39, #40, #41)
+
 ## [2027.0.6-preview] - 2026-10-22
 
 Sixth preview of PostSharp 2027.0, based on 2027.0.5-preview.
