@@ -2,6 +2,28 @@
 
 All notable changes to PostSharp are documented here.
 
+## [2027.0.8-preview] - 2026-11-25
+
+Eighth and final preview of PostSharp 2027.0, based on 2027.0.7-preview. The next build of this version is the release candidate.
+
+### Highlights
+- NativeAOT and trimming: six defects fixed, and a documentation article on what is supported (#337)
+- Built and tested with the stable Visual Studio 2027 and .NET 11, including Windows ARM64
+
+### Breaking Changes
+- ⚠️ Security: on Linux and macOS, the build fails when neither `HOME` nor `XDG_DATA_HOME` is set, instead of using the shared temporary directory (#336)
+
+### Enhancements
+- Bound parameters in the event interception advices (#261)
+- Threading: no `EventInterceptionArgs` allocation in the event advices of the threading models (#342)
+
+### Fixes
+- `dotnet build` of an AnyCPU .NET Framework project on a 64-bit machine runs the 64-bit compiler (#320)
+- Threading: `[RequiresThreadSafe]` no longer fails with PS0171 (#335)
+- Unverifiable assembly with an explicit implementation of an aspect interface (#341)
+- Unverifiable assembly with `[ImportMember]` of a protected base-class field ordered before a location interception (#343)
+- NativeAOT: module initializers, volatile static fields, serialization of nested-type arrays, `<PrivateImplementationDetails>`, `MemoryCachingBackend`, threading immutability check, `InvalidateCache` (#273, #274, #275, #276, #277, #278, #338)
+
 ## [2027.0.7-preview] - 2026-10-27
 
 Seventh preview of PostSharp 2027.0, based on 2027.0.6-preview. The packages of 2027.0.6-preview were never published to nuget.org, so this is the first build that ships its changes.
